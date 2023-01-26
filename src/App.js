@@ -1,30 +1,20 @@
-import Header from "./components/Header";
-import Base from "./components/Base";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import WorkoutLogging from "./components/WorkoutLogging";
+import { BrowserRouter as Router, renderMatches, Route, Routes } from 'react-router-dom';
+
 import CalorieTracking from "./components/CalorieTracking";
+import React from "react";
 
-function App() {
 
-  let WORKOUTS = []
-
-  const getData = (data) => {
-    WORKOUTS.push(data)
-  }
-  
-  
+function App (){
 
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/" element={<Base workouts={WORKOUTS}/>} />
-        <Route path="/workoutlogging" element={<WorkoutLogging onSubmit={getData}/>} />
-        <Route path="/calorietracking" element={<CalorieTracking />} />
+        <Route path="/" element={<CalorieTracking />} />
       </Routes>
     </Router>
   );
-}
+  }
+
 
 export default App;
