@@ -13,6 +13,7 @@ function App (){
         <Route path="/" element={<CalorieTracking />} />
       </Routes>
     </Router>
+
   );
   }
 
